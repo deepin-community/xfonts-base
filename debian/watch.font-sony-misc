@@ -1,0 +1,3 @@
+#git=git://anongit.freedesktop.org/xorg/font/sony-misc
+version=3
+https://xorg.freedesktop.org/releases/individual/font/ font-sony-misc-(.*)\.tar\.gz
