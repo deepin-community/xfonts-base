@@ -45,8 +45,12 @@ else
 	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
 endif
 
-$(STAMP_DIR)/build-%:
+$(STAMP_DIR)/prepare:
 	mkdir -p $(STAMP_DIR)
+	dh_update_autotools_config
+	>$@
+
+$(STAMP_DIR)/build-%: $(STAMP_DIR)/prepare
 	mkdir -p $*-build
 	cd $*-build && \
 	../$*/configure \
