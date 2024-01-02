@@ -64,8 +64,12 @@ $(STAMP_DIR)/build-%: $(STAMP_DIR)/prepare
 
 
 build: build-stamp
+build-indep: build-stamp
 build-stamp: $(addprefix $(STAMP_DIR)/build-,$(SUBDIRS))
 	>$@
+
+build-arch:
+# Nothing to do.
 
 clean:
 	dh_testdir
